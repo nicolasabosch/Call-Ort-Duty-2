@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed;
     public float lifeTime;
-    int muerte;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -21,6 +21,8 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter()
     {
         Destroy(gameObject);
-        Debug.Log("Matar");
+        audioSource.Play();
+
+
     }
 }

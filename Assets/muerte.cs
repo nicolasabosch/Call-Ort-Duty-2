@@ -7,17 +7,27 @@ public class muerte : MonoBehaviour
 {
     
 
-    int contador_muerte=0;
-    public Text muerte_contable;
+    
+    public Text txtMuertes;
+    
 
     public GameObject zombie;
     
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.name== "FPSController")
+        {
+            return;
+        }
+        
         Destroy(gameObject);
-        contador_muerte++;
-        muerte_contable.text = contador_muerte.ToString();
+
+        txtMuertes.text = txtMuertes.text.Replace("Kills:", "").Trim();
+        txtMuertes.text = "Kills:" + (int.Parse (txtMuertes.text) + 1).ToString();
+        
+        
+
     }
 
     
@@ -27,7 +37,7 @@ public class muerte : MonoBehaviour
     {
 
 
-        muerte_contable.text = contador_muerte.ToString();
+      //  muerte_contable.text = contador_muerte.ToString();
 
     }
 }

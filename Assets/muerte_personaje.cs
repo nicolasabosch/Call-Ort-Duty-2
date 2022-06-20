@@ -13,9 +13,13 @@ public class muerte_personaje : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Zombie") {
-            Debug.Log("moriste");
+           
+        if (collision.gameObject.name.ToLower().IndexOf("zombie") > -1) {
             vivo = false;
+            Cursor.lockState= CursorLockMode.None;
+            Cursor.visible = true;
+            
+
         }
     }
 
@@ -29,13 +33,18 @@ public class muerte_personaje : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
 
 
-        if (vivo== false)
+
+        if (vivo == false)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            
+            vivo = true;
+            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+                
 
             
         }
