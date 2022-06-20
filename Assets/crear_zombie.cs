@@ -42,6 +42,11 @@ public class crear_zombie : MonoBehaviour
             tiempo = 2;
             //Instantiate(zombie, new Vector3(5.1f, 2.87f, -2.52f), new Quaternion());
             Instantiate(zombie, new Vector3(0f, 0f, 0f), new Quaternion());
+            
+            for (int i = 0; i < 3; i++)
+            {
+                Instantiate(zombie, new Vector3(0f, 0f, 0f), new Quaternion());
+            }
 
         }
         
