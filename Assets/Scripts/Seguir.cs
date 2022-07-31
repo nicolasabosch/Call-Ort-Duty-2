@@ -11,6 +11,7 @@ public class Seguir : MonoBehaviour
     void Start()
     {
         enemyMesh = GetComponent<NavMeshAgent>();
+
     }
     // Update is called once per frame
     void Update()
